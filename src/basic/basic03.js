@@ -3,7 +3,8 @@
 */
 
 export function areEqual(a, b, c) {
-    return true
+  if (a==b && b==c) return true
+  else return false
 }
 
 

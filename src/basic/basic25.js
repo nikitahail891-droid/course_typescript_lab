@@ -3,5 +3,14 @@
 */
 
 export function removeFirstOccurrence (arr, value) {
-  return arr
-}
+   let found = false;
+    let newarr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!found && arr[i] === value) {
+            found = true;
+            continue;
+        }
+        newarr.push(arr[i]);
+    }
+    return newarr;
+  }

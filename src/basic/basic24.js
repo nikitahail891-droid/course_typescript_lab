@@ -3,6 +3,10 @@
 */
 
 export function replace_word(sentence, old_word, new_word) {
-    return "";
+    let arr = sentence.split(' ');
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i]==old_word) arr[i]=new_word;
+    }
+    return arr.join(' ');
 }
 
