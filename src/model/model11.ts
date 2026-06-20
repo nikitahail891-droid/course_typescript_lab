@@ -10,5 +10,10 @@ abstract class DataStorage {
 
 export class MemoryStorage extends DataStorage {
   private data: string = "";
-  
+  save(data: string): void {
+    this.data=data;
+  }
+  load(): string {
+    return this.data;
+  }
 }

@@ -1,5 +1,6 @@
 /* 
-	В классе Circle переопределите метод draw, чтобы он сначала вызывал метод draw у родительского класса Shape, а затем выводил в консоль "Drawing circle".
+	В классе Circle переопределите метод draw, чтобы он сначала вызывал метод draw у родительского класса Shape, 
+  а затем выводил в консоль "Drawing circle".
 */
 
 export class Shape {
@@ -10,5 +11,8 @@ export class Shape {
 
 
 export class Circle extends Shape {
-
+  draw(): void {
+    super.draw();
+    console.log("Drawing circle");
+  }
 }

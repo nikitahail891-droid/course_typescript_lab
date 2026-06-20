@@ -9,6 +9,8 @@ export class Task {
     constructor(title: string);                  // Только название задачи
     constructor(title: string, done: boolean);   // Название и статус завершения
     constructor(title: string, done?: boolean) {
-
+        if (done!== undefined) this.done=done;
+        else this.done=false;
+        this.title=title;
     }
 }

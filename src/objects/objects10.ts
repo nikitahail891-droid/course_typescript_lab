@@ -3,4 +3,9 @@
 */
 
 export const counter = {
+	x: 0,
+	count: function(){
+		return ++this.x;
+	}
+
 }

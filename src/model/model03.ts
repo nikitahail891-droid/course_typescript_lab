@@ -13,5 +13,7 @@ export class Person {
 
 
 export class Employee extends Person {
-  
+  constructor(name: string, public position: string){
+    super(name);
+  }
 }

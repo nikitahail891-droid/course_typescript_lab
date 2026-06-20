@@ -1,5 +1,6 @@
 /* 
-	Допишите функцию валидации пользователя, которая проверяет несколько условий и бросает разные ошибки для разных случаев.
+	Допишите функцию валидации пользователя, которая проверяет несколько условий и 
+  бросает разные ошибки для разных случаев.
 */
 
 export class UserValidationError extends Error {
@@ -21,4 +22,13 @@ export function validateUser(user: User): void {
   // 2. Проверить, что возраст >= 18
   // 3. Проверить, что email содержит '@'
   // Для каждой ошибки бросать UserValidationError с указанием поля
+   if (!user.name || user.name.trim() === '') {
+    throw new UserValidationError('Name is required', 'name');
+  }
+  if (user.age < 18) {
+    throw new UserValidationError('Age must be at least 18', 'age');
+  }
+  if (!user.email.includes('@')) {
+    throw new UserValidationError('Invalid email format', 'email');
+  }
 }

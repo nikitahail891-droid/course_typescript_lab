@@ -3,6 +3,7 @@
 */
 
 export function safeDivide(a: number, b: number): number | null {
+  if (b===0) return null;
   // Ваш код здесь (3-4 строки)
   return a / b;
 }

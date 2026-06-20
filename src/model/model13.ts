@@ -11,5 +11,8 @@ export class Bird {
 
 
 export class Penguin extends Bird {
-
+  fly(): Penguin {
+    console.log("Cannot fly");
+    return this;
+  }
 }

@@ -3,6 +3,7 @@
 */
 
 export function getArrayElement<T>(array: T[], index: number): T | undefined {
+  if (array.length<index) return undefined;
   // Ваш код здесь (3-4 строки)
   return array[index];
 }

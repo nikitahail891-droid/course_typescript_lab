@@ -1,5 +1,6 @@
 /* 
-	Метод save класса UserDatabase должен принимать более широкий тип параметров. Метод save должен сохранять данные любого типа и выводить в консоль сообщение "Saving any data".
+	Метод save класса UserDatabase должен принимать более широкий тип параметров. 
+  Метод save должен сохранять данные любого типа и выводить в консоль сообщение "Saving any data".
 */
 
 
@@ -10,5 +11,7 @@ export class Database {
 }
 
 export class UserDatabase extends Database {
-
+  save(data: any): void {
+    console.log("Saving any data");
+  }
 }

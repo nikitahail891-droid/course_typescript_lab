@@ -6,6 +6,7 @@ import { Result } from 'neverthrow'
 import { parseNumber } from './fornever'
 
 export const processNumbers = (inputs: string[]): Result<number[], string> => {
-	const results = inputs.map(parseNumber)
+	//const results = inputs.map(parseNumber)
+	return Result.combine(inputs.map(parseNumber));
 	// Ваш код здесь (3-5 строк)
 }

@@ -1,5 +1,6 @@
 /* 
-	В объекте user создать метод copy, который будет возвращать глубокую копию объекта. При передачи аргументов метод должен возвращать копию объекта с новыми значениями свойств. 
+	В объекте user создать метод copy, который будет возвращать глубокую копию объекта.
+   При передачи аргументов метод должен возвращать копию объекта с новыми значениями свойств. 
 */
 
 
@@ -20,6 +21,13 @@ export const user: User = {
   age: 30,
   address: { street: "Main Street", building: 123 },
   copy(name?: string, age?: number, address?: Address) {
-    return this;
+    const newUser = JSON.parse(JSON.stringify(this)) as User;
+    newUser.copy = this.copy;
+    
+    if (name !== undefined) newUser.name = name;
+    if (age !== undefined) newUser.age = age;
+    if (address !== undefined) newUser.address = address;
+    
+    return newUser;
   },
 };

@@ -1,5 +1,6 @@
 /* 	
-	В объекте user создать метод copy, который будет возвращать копию объекта. При передачи аргументов метод должен возвращать копию объекта с новыми значениями свойств.
+	В объекте user создать метод copy, который будет возвращать копию объекта. 
+  При передачи аргументов метод должен возвращать копию объекта с новыми значениями свойств.
 */
 
 export type User = {
@@ -12,6 +13,13 @@ export const user: User = {
   name: "John",
   age: 30,
   copy(name?: string, age?: number) {
-	return this
+    let c = Object.assign({},user);
+    if (name !== undefined) {
+      c.name = name;
+    }
+    if (age !== undefined) {
+      c.age = age;
+    }
+	return c
   },
 };

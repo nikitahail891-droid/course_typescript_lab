@@ -12,5 +12,9 @@ export class Product {
 
 
 export class DiscountedProduct extends Product {
-
+  discountPercentage: number
+  constructor(price: number, public discount: number){
+    super(price);
+    this.discountPercentage=discount;
+  }
 }

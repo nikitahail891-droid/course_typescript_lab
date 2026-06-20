@@ -1,5 +1,6 @@
 /* 
-	Реализовать функцию sum<T extends Summable>(a: T[]): T, возвращающую сумму элементов в массиве. Допускается использовать приведение типа Summable к T
+	Реализовать функцию sum<T extends Summable>(a: T[]): T, возвращающую сумму элементов в массиве.
+	 Допускается использовать приведение типа Summable к T
 */
 
 export type Summable = {
@@ -7,5 +8,10 @@ export type Summable = {
 }
 
 export function sum<T extends Summable>(a: T[]): T {
-	return a[0];
+  let result: Summable = a[0];
+  for (let i = 1; i < a.length; i++) {
+    result = result.sum(a[i]);
+  }
+  return result as T;
+
 }

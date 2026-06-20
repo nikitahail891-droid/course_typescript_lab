@@ -1,5 +1,6 @@
 /* 		
-	Класс Square должен сохранять сигнатуру метода setSize класса Rectangle, при этом стороны квадрата должны быть равны (выбрать наибольшую сторону)
+	Класс Square должен сохранять сигнатуру метода setSize класса Rectangle, 
+  при этом стороны квадрата должны быть равны (выбрать наибольшую сторону)
 */
 
 export class Rectangle {
@@ -23,7 +24,8 @@ export class Rectangle {
 export class Square extends Rectangle {
   override setSize(width: number, height: number): void {
     // Квадрат должен сохранять равенство сторон
-    
+    if (width<height) width=height
+    else height=width;
     super.setSize(width, height);
   }
 }

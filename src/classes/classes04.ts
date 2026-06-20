@@ -4,9 +4,15 @@
 
 export class Point {
     coords: number[];
-    constructor(x: number, y: number);   // Конструктор с двумя числами
-    constructor(coords: [number, number]);       // Конструктор с массивом чисел
+    constructor(x: number, y: number); // Конструктор с двумя числами
+    constructor(coords: [number, number]);    // Конструктор с массивом чисел
     constructor(...args: any[]) {
-		
+		if (args.length === 1 && Array.isArray(args[0])) {
+            // Вызов new Point([x, y])
+            this.coords = [...args[0]];
+        } else {
+            // Вызов new Point(x, y) или new Point(x, y, ...)
+            this.coords = [...args];
+        }
     }
 }
